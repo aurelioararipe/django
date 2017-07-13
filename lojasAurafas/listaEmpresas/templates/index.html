@@ -4,15 +4,19 @@
 	<title>Lista de Empresas</title>
 </head>
 <body>
-	<table >
-		<tr>
-			<th>Nome</th>
-			<th>Estado</th>
-		</tr>
-		<tr>
-			<td>Menezes CDs</td>
-			<td>Menezes DVDs</td>
-		</tr>
-	</table>
+	<h1>Início</h1>
+	{% if empresas %}
+	<ul>
+		{% for empresa in empresas %}
+		<li>
+			<a href="{% url 'exibir' empresa.id %}">
+				{{empresa.razao_social}}
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>Nenhuma empresa encontrada</p>
+	{% endif %}
 </body>
 </html>

@@ -1,11 +1,9 @@
 from django.db import models
 
-# Create your models here.
 
-class Empresa(object):
-	def __init__(self, razao_social="", proprietario="", estado="", cidade="", telefone=""):
-		self.razao_social = razao_social
-		self.proprietario = proprietario
-		self.estado = estado
-		self.cidade = cidade
-		self.telefone = telefone
+class Empresa(models.Model): 
+	razao_social = models.CharField(max_length=255, null=False)
+	proprietario = models.CharField(max_length=255, null=False)
+	estado = models.CharField(max_length=255, null=False)
+	cidade = models.CharField(max_length=255, null=False)
+	telefone = models.CharField(max_length=15, null=False)

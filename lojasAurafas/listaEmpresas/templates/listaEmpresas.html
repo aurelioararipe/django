@@ -6,9 +6,10 @@
 <body>
 	Detalhe da Empresa
 	razão social: {{empresa.razao_social}} <br>
-	Proprietário: {{empresa.proprietario}} <br>
+	<a href="{% url 'convidar' empresa.id %}">Convidar</a>
+	<!--Proprietário: {{empresa.proprietario}} <br>
 	Estado: {{empresa.estado}}<br>
 	Cidade: {{empresa.cidade}}<br>
-	Telefone: {{empresa.telefone}}<br>
+	Telefone: {{empresa.telefone}}<br>-->
 </body>
 </html>

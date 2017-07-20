@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from listaEmpresas.views import index, exibir
+from listaEmpresas.views import index, exibir, convidar
 
 urlpatterns = [
     # Examples:
@@ -9,5 +9,8 @@ urlpatterns = [
     url(r'^$', index, name='index'),
 
     url(r'^listaEmpresas/(?P<empresa_id>\d+)$', exibir, name='exibir'),
+
+    url(r'^listaEmpresas/(?P<empresa_id>\d+)/convidar$', convidar, name='convidar'),
+
 
 ]

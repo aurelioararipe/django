@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Lista de Empresas</title>
-</head>
-<body>
-	<h1>Início</h1>
-	{% if empresas %}
-	<ul>
-		{% for empresa in empresas %}
-		<li>
-			<a href="{% url 'exibir' empresa.id %}">
-				{{empresa.razao_social}}
-			</a>
-		</li>
-		{% endfor %}
-	</ul>
-	{% else %}
-	<p>Nenhuma empresa encontrada</p>
-	{% endif %}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block body %}
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>Todos as empresas</strong>
+        </div>
+
+		{% if empresas %}
+		<ul>
+			{% for empresa in empresas %}
+			<li>
+				<a href="{% url 'exibir' empresa.id %}">
+					{{empresa.razao_social}}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>Nenhuma empresa encontrada</p>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

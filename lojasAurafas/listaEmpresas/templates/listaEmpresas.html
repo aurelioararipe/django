@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Lista de Empresas</title>
-</head>
-<body>
-	Detalhe da Empresa
-	razão social: {{empresa.razao_social}} <br>
-	<a href="{% url 'convidar' empresa.id %}">Convidar</a>
-	<!--Proprietário: {{empresa.proprietario}} <br>
-	Estado: {{empresa.estado}}<br>
-	Cidade: {{empresa.cidade}}<br>
-	Telefone: {{empresa.telefone}}<br>-->
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-12">
+    	<h2 style="margin-top:0">{{empresa.razao_social}}</h2>
+    	<address>
+        	<strong>{{empresa.proprietario}}</strong><br>
+        	<abbr title="Telefone">Tel:</abbr> {{empresa.telefone}}<br>
+        	<strong>{{empresa.estado}}</strong>
+        	<strong>{{empresa.cidade}}</strong>
+        </address>
+        <a href="{% url 'convidar' empresa.id %}">Convidar</a>
+    </div>
+</div>
+{% endblock %}
